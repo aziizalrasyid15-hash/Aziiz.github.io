@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Contact | REXTAR</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg,#e60000,#5c3d01);
+  color:#fff;
+  overflow-x: hidden;
+}
+
+/* ===== MENU BTN ===== */
+.menu-btn{
+  display:inline-block;
+  transition:.3s;
+  padding:20px;
+  border-radius:22px;
+  position:relative;
+}
+
+.menu-btn img{
+  width:250px;
+  border-radius:20px;
+  display:block;
+  transition:.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+.menu-btn:hover img{
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:0 20px 35px rgba(0,0,0,.6);
+}
+
+.menu-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:32px;
+  background: linear-gradient(90deg,transparent,gold,transparent);
+  animation:borderRun 2s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  -webkit-mask-composite:xor;
+  padding:6px;
+}
+
+@keyframes borderRun{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+nav{
+  margin-top:25px;
+  text-align:center;
+}
+
+/* ===== HERO ===== */
+.hero{
+  width:1100px;
+  margin:40px auto;
+  background: linear-gradient(135deg,#7a0000,#c9a14a);
+  border-radius:25px;
+  padding:50px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.hero h1{
+  margin:0;
+  font-size:46px;
+  color:gold;
+}
+
+/* ===== FORM ===== */
+
+.contact-card{
+  max-width:950px;
+  margin:60px auto;
+  padding:40px;
+  background: linear-gradient(135deg,#7a0000,#c9a14a);
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  transition:.4s;
+  transform: translateY(40px);
+  animation: fadeUP 1s ease forwards;
+}
+
+.contact-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 0 25px rgba(255,215,0,.8),
+    0 0 45px rgba(139,0,0,.9);
+}
+
+.contact-card input,
+.contact-card textarea{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border:none;
+  border-radius:12px;
+  background:#2a0000;
+  color:#fff;
+  font-size:16px;
+  outline:none;
+  transition:.3s;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus{
+  box-shadow:0 0 12px gold;
+  background:#3b0000;
+}
+
+.send-btn{
+  margin-top:20px;
+  padding:14px 35px;
+  background:linear-gradient(90deg,gold,#ffae00);
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  color:#7a0000;
+  transition:.3s;
+}
+
+.send-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px gold;
+}
+
+/* ===== JAM OFFICIAL ===== */
+.clock{
+  position:fixed;
+  top:30px;
+  right:30px;
+  background:linear-gradient(135deg,#7a0000,#c9a14a);
+  padding:15px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:60px;
+  background:#7a0000;
+  padding:20px;
+  text-align:center;
+  border-radius:20px 20px 0 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero,.contact-box{
+    width:90%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="clock" id="clock"></div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="menu-btn"><img src="HOME.jpg"></a>
+  <a href="Gallery RX.html" class="menu-btn"><img src="GALLERY.JPG"></a>
+  <a href="Contact RX.html" class="menu-btn"><img src="CONTACT.JPG"></a>
+  <a href="About RX.html" class="menu-btn"><img src="ABOUT.jpg"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>CONTACT REXTAR</h1>
+  <p>Hubungi kami untuk kolaborasi, pemesanan, dan pertanyaan lainnya</p>
+</section>
+
+<!-- FORM -->
+  <div class="contact-card">
+  <h2>CONTACT REXTAR</h2>
+
+  <input type="text" placeholder="Nama Anda" required>
+  <input type="email" placeholder="Email Anda" required>
+  <textarea rows="5" placeholder="Pesan Anda"></textarea>
+
+  <button class="send-btn" onclick="kirim()">SEND MESSAGE</button>
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+ <footer>
+  <p>© 2026 REXTAR 
+    Aziiz Al Rasyid | 251011700880 | 01SIFP015</p>
+</footer>
+
+<!-- JS JAM -->
+<script>
+function updateClock(){
+  document.getElementById("clock").innerHTML =
+    "Official Time : " + new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+
+function kirim(){
+  alert("Terima kasih! Pesan kamu sudah dikirim ke REXTAR ");
+}
+</script>
+
+</script>
+
+</body>
+</html>

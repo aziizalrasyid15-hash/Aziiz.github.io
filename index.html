@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>REXTAR | Official Brand</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial;
+  background: linear-gradient(135deg,#e60000,#5c3d01);
+  color:#ffffff;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  width:1100px;
+  margin:auto;
+}
+
+/* ===== HERO ===== */
+.hero{
+  margin-top:40px;
+  background: linear-gradient(135deg,#7a0000,#c9a14a);
+  border-radius:20px;
+  display:flex;
+  padding:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.hero img{
+  width:320px;
+  border-radius:20px;
+}
+
+.hero-text{
+  padding-left:40px;
+}
+
+.hero-text h1{
+  font-size:52px;
+  margin:0;
+  color:#ffd700;
+}
+
+.hero-text span{
+  font-size:18px;
+  letter-spacing:3px;
+}
+
+.hero-text p{
+  margin-top:20px;
+  line-height:1.6;
+}
+
+/* ===== NAV & MENU BTN===== */
+.menu-btn{
+  display:inline-block;
+  transition:.3s;
+  padding:20px;
+  border-radius:22px;
+  position:relative;
+}
+
+.menu-btn img{
+  width:230px;
+  border-radius:20px;
+  display:block;
+  transition:.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+.menu-btn:hover img{
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:0 20px 35px rgba(0,0,0,.6);
+}
+
+.menu-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:32px;
+  background: linear-gradient(90deg,transparent,gold,transparent);
+  animation:borderRun 2s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  -webkit-mask-composite:xor;
+  padding:6px;
+}
+
+@keyframes borderRun{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+nav{
+  margin-top:25px;
+  text-align:center;
+}
+
+
+/* ===== ABOUT ===== */
+.about{
+  margin-top:50px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:40px;
+  display:flex;
+}
+
+.about img{
+  width:260px;
+  border-radius:20px;
+}
+
+.about-text{
+  padding-left:30px;
+}
+
+.about-text h2{
+  color:#ffd700;
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio{
+  margin-top:50px;
+}
+
+.portfolio h2{
+  text-align:center;
+  color:#ffd700;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:flex;
+  justify-content:space-between;
+}
+
+.card{
+  width:30%;
+  background:linear-gradient(135deg,#ff0000,#b40000);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  padding: 10px 0px 10px;
+}
+
+.card img{
+  width:100%;
+  border-radius:15px;
+}
+
+.contact-card{
+  max-width:800px;
+  margin:60px auto;
+  padding:40px;
+  background: linear-gradient(135deg,#7a0000,#c9a14a);
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  transition:.4s;
+}
+
+.contact-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 0 25px rgba(255,215,0,.8),
+    0 0 45px rgba(139,0,0,.9);
+}
+ /*=====Jam=====*/
+.clock{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:linear-gradient(135deg,#7a0000,#c9a14a);
+  padding:15px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:60px;
+  background:#7a0000;
+  padding:20px;
+  text-align:center;
+  border-radius:20px 20px 0 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1150px){
+  .container{width:95%;}
+  .hero,.about{flex-direction:column;text-align:center;}
+  .hero-text,.about-text{padding:0;margin-top:20px;}
+  .cards{flex-direction:column;gap:25px;}
+  .card{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+  <!-- CLOCK -->
+<div class="clock" id="clock"></div>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <img src="Banner Rx.jpg" alt="Rextar">
+  <div class="hero-text">
+    <span>OFFICIAL BRAND</span>
+    <h1>REXTAR</h1>
+    <p>
+      
+    </p>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="menu-btn"><img src="HOME.jpg"></a>
+  <a href="Gallery RX.html" class="menu-btn"><img src="GALLERY.JPG"></a>
+  <a href="Contact RX.html" class="menu-btn"><img src="CONTACT.JPG"></a>
+  <a href="About RX.html" class="menu-btn"><img src="ABOUT.jpg"></a>
+</nav>
+<!-- ABOUT -->
+<section class="about">
+  <img src="rextar.jpg">
+  <div class="about-text">
+    <h2>ABOUT REXTAR</h2>
+    <p>
+      Brand fashion lokal yang menggabungkan kekuatan, karakter,
+      dan kemewahan dalam setiap desain.Rextar terinspirasi dari kata Rex (raja) dan Star (bintang).
+      Kami menghadirkan apparel dengan identitas kuat,
+      modern, dan eksklusif untuk generasi percaya diri.
+    </p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <h2>OUR COLLECTION</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="HOODIE.JPG">
+      <h3>Rextar Hoodie</h3>
+    </div>
+    <div class="card">
+      <img src="TSHIRT.jpg">
+      <h3>Rextar T-Shirt</h3>
+    </div>
+    <div class="card">
+      <img src="JAKET.JPG">
+      <h3>Rextar Jacket</h3>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 REXTAR | Aziiz Al Rasyid | 251011700880 | 01SIFP015</p>
+</footer>
+
+</div>
+
+<script>
+function updateClock(){
+  document.getElementById("clock").innerHTML =
+    "Official Time : " + new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+
+</body>
+</html>

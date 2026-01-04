@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>About | REXTAR</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg,#e60000,#5c3d01);
+  color:#fff;
+  text-align: justify;
+}
+
+/* ===== NAV ===== */
+.menu-btn{
+  display:inline-block;
+  transition:.3s;
+  padding:20px;
+  border-radius:22px;
+  position:relative;
+}
+
+.menu-btn img{
+  width:250px;
+  border-radius:20px;
+  display:block;
+  transition:.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+.menu-btn:hover img{
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:0 20px 35px rgba(0,0,0,.6);
+}
+
+.menu-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:32px;
+  background: linear-gradient(90deg,transparent,gold,transparent);
+  animation:borderRun 2s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  -webkit-mask-composite:xor;
+  padding:6px;
+}
+
+@keyframes borderRun{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+nav{
+  margin-top:25px;
+  text-align:center;
+}
+/* ===== HERO ABOUT ===== */
+.hero{
+  width:1100px;
+  margin:50px auto;
+  padding:50px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#8b0000,#c9a14a);
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  text-align:center;
+}
+.hero h1{
+  font-size:48px;
+  margin:0;
+  color:#ffd700;
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:25px;
+  line-height:1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: -1px;
+  hyphens: auto;
+}
+
+/* ===== STORY ===== */
+.story{
+  width:1100px;
+  margin:60px auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.story img{
+  width:100%;
+  border-radius:25px;
+  box-shadow:0 15px 30px rgba(0,0,0,.6);
+}
+.story-text{
+  background:linear-gradient(135deg,#7a0000,#c9a14a);
+  padding:40px;
+  border-radius:25px;
+  text-align: justify;
+  font-size: 18px;
+}
+.story-text h2{
+  color:#ffd700;
+  margin-top:0;
+}
+
+/* ===== VALUES ===== */
+.values{
+  width:1100px;
+  margin:60px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.value-box{
+  background:linear-gradient(135deg,#8b0000,#c9a14a);
+  padding:30px;
+  border-radius:25px;
+  text-align:justify;
+  font-size: 18px;
+  transition:.4s;
+}
+.value-box:hover{
+  transform:translateY(-12px);
+  box-shadow:
+    0 0 25px rgba(255,215,0,.8),
+    0 0 40px rgba(139,0,0,.9);
+}
+.value-box h3{
+  color:#ffd700;
+}
+
+/* ===== JAM OFFICIAL ===== */
+.clock{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:linear-gradient(135deg,#7a0000,#c9a14a);
+  padding:15px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:80px;
+  background:#7a0000;
+  padding:25px;
+  text-align:center;
+  border-radius:25px 25px 0 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1150px){
+  .hero,.story,.values{
+    width:90%;
+  }
+  .story{
+    grid-template-columns:1fr;
+  }
+  .values{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CLOCK -->
+<div class="clock" id="clock"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="menu-btn"><img src="HOME.jpg"></a>
+  <a href="Gallery RX.html" class="menu-btn"><img src="GALLERY.JPG"></a>
+  <a href="Contact RX.html" class="menu-btn"><img src="CONTACT.JPG"></a>
+  <a href="About RX.html" class="menu-btn"><img src="ABOUT.jpg"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>ABOUT REXTAR</h1>
+  <p>
+    REXTAR bukan sekadar brand fashion, melainkan representasi dari karakter, keberanian, dan identitas diri. Nama REXTAR lahir dari perpaduan kata “Rex” yang berarti raja dan “Star” yang berarti bintang. Filosofi ini mencerminkan semangat untuk menjadi sosok yang memimpin, percaya diri, dan mampu bersinar dengan caranya sendiri.
+    Setiap individu memiliki potensi untuk menjadi versi terbaik dari dirinya. REXTAR hadir sebagai simbol bagi mereka yang berani tampil berbeda, memiliki visi, dan tidak takut mengekspresikan jati diri melalui gaya berpakaian. Kami percaya bahwa fashion bukan hanya tentang penampilan, tetapi juga tentang pesan dan makna yang dibawa
+    </p>
+  </p>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <img src="rextar.jpg" alt="REXTAR">
+  <div class="story-text">
+    <h2>Our Story</h2>
+    <p>
+    REXTAR bermula dari sebuah gagasan sederhana: menciptakan brand lokal yang memiliki karakter kuat dan nilai estetika tinggi. Dimulai dari produk t-shirt sebagai media ekspresi visual, REXTAR berkembang dengan fokus pada detail desain, kualitas material, dan identitas yang konsisten.
+    Dalam setiap proses kreatif, REXTAR mengedepankan keseimbangan antara desain modern dan filosofi yang bermakna. Setiap koleksi dirancang untuk mencerminkan semangat generasi muda yang dinamis, berani, dan memiliki ambisi besar untuk berkembang.
+    </p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="value-box">
+    <h3>IDENTITY</h3>
+    <p>Desain REXTAR menampilkan gaya modern dan streetwear yang tegas, dengan sentuhan visual yang elegan. Setiap elemen desain dibuat untuk menciptakan kesan percaya diri, dominan, dan berkelas, sehingga pemakainya merasa memiliki karakter yang kuat saat mengenakan produk REXTAR.
+    </p>
+    </div>
+  <div class="value-box">
+    <h3>MISSION</h3>
+    <p>Misi REXTAR adalah menghadirkan produk apparel berkualitas dengan desain yang berkarakter, membangun kepercayaan diri penggunanya, serta mendukung pertumbuhan industri kreatif lokal. REXTAR berkomitmen untuk terus berinovasi, menjaga kualitas, dan menciptakan karya yang relevan dengan perkembangan zaman.</p>
+  </div>
+  <div class="value-box">
+    <h3>VISION</h3>
+    <p>Menjadi brand fashion lokal yang tidak hanya dikenal melalui produk, tetapi juga melalui nilai, karakter, dan identitas yang kuat. REXTAR memiliki visi untuk berkembang menjadi brand yang mampu bersaing di tingkat nasional hingga global, tanpa meninggalkan jati diri sebagai karya anak bangsa.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 REXTAR | Aziiz Al Rasyid | 251011700880 | 01SIFP015</p>
+</footer>
+
+<!-- JS JAM -->
+<script>
+function updateClock(){
+  document.getElementById("clock").innerHTML =
+    "Official Time : " + new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>

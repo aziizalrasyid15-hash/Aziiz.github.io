@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Gallery | REXTAR</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg,#e60000,#5c3d01);
+  color:#fff;
+}
+
+/* ===== NAV & MENU BTN===== */
+.menu-btn{
+  display:inline-block;
+  transition:.3s;
+  padding:20px;
+  border-radius:22px;
+  position:relative;
+}
+
+.menu-btn img{
+  width:250px;
+  border-radius:20px;
+  display:block;
+  transition:.3s;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+.menu-btn:hover img{
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:0 20px 35px rgba(0,0,0,.6);
+}
+
+.menu-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:32px;
+  background: linear-gradient(90deg,transparent,gold,transparent);
+  animation:borderRun 2s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  -webkit-mask-composite:xor;
+  padding:6px;
+}
+
+@keyframes borderRun{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+nav{
+  margin-top:25px;
+  text-align:center;
+}
+
+/* ===== HERO ===== */
+.hero{
+  width:1100px;
+  margin:40px auto;
+  background: linear-gradient(135deg,#7a0000,#c9a14a);
+  border-radius:25px;
+  padding:50px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  text-align: center;
+}
+
+.hero h1{
+  margin:0;
+  font-size:48px;
+  color:#ffd700;
+}
+
+.p{
+  width:60%;
+  font-size: 18px;
+  margin-top:20px;
+  line-height:1.6;
+  text-align: center;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery{
+  width:1100px;
+  margin:60px auto;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:30px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background: linear-gradient(135deg,#8b0000,#c9a14a);
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  opacity:0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.card:nth-child(1){animation-delay:.2s;}
+.card:nth-child(2){animation-delay:.4s;}
+.card:nth-child(3){animation-delay:.6s;}
+
+.card img{
+  width:100%;
+  transition:.6s;
+}
+
+.card:hover img{
+  transform:scale(1.12);
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card h3{
+  margin:0;
+  color:#fff;
+}
+
+.card span{
+  color:#ffd700;
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+/* Hover Glow */
+.card:hover{
+  transform: translateY(-15px);
+  box-shadow:
+    0 0 25px rgba(255,215,0,.8),
+    0 0 45px rgba(139,0,0,.8);
+}
+
+/* ===== JAM OFFICIAL ===== */
+.clock{
+  position:fixed;
+  top:30px;
+  right:30px;
+  background:linear-gradient(135deg,#7a0000,#c9a14a);
+  padding:15px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+/*====footer====*/
+footer{
+  margin-top:60px;
+  background:#7a0000;
+  padding:20px;
+  text-align:center;
+  border-radius:20px 20px 0 0;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ===== RESPON ===== */
+@media(max-width:1150px){
+  .hero,.gallery{
+    width:90%;
+  }
+  .gallery{
+    grid-template-columns:1fr;
+  }
+  .hero p{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- CLOCK -->
+<div class="clock" id="clock"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="menu-btn"><img src="HOME.jpg"></a>
+  <a href="Gallery RX.html" class="menu-btn"><img src="GALLERY.JPG"></a>
+  <a href="Contact RX.html" class="menu-btn"><img src="CONTACT.JPG"></a>
+  <a href="About RX.html" class="menu-btn"><img src="ABOUT.jpg"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>REXTAR COLLECTION</h1>
+  <p>
+    Koleksi eksklusif Rextar yang menggabungkan desain modern,
+    karakter kuat, dan sentuhan luxury.
+  </p>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+
+  <div class="card">
+    <img src="HOODIE.JPG" alt="Rextar Hoodie">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>Hoodie Premium</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="TSHIRT.jpg" alt="Rextar T-Shirt">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>T-Shirt Modern</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="JAKET.JPG" alt="Rextar Jacket">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>Jacket Streetwear</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="shorts.jpg" alt="Rextar Jacket">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>shorts pants</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="joggerts.jpg" alt="Rextar Jacket">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>joggers pants</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="topi.jpg" alt="Rextar Jacket">
+    <div class="card-content">
+      <span>REXTAR</span>
+      <h3>Topi</h3>
+    </div>
+  </div>
+
+</section>
+
+<!---footer---->
+<footer>
+  <p id="jam"></p>
+  <p>© 2026 REXTAR | Aziiz Al Rasyid | 251011700880 | 01SIFP015</p>
+</footer>
+
+</div>
+
+<!-- JS JAM -->
+<script>
+function updateClock(){
+  document.getElementById("clock").innerHTML =
+    "Official Time : " + new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
